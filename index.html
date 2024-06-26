@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regrando</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #fff;
+            scroll-behavior: smooth;
+        }
+        header {
+            background-color: #F3A081;
+            color: white;
+            text-align: center;
+            padding: 20px 20px;
+            position: relative;
+            border-radius: 0 0 15px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo img {
+            width: 150px;
+            height: auto;
+        }
+        nav {
+            background-color: #72C2B7;
+            text-align: center;
+            padding: 10px 0px;
+            border-radius: 15px 15px 15px 15px;
+            flex: 1;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #F3A081;
+        }
+        .hero {
+            position: relative;
+            text-align: center;
+            color: black;
+            padding: 100px 20px;
+            overflow: hidden;
+            border-radius: 15px;
+            margin: 20px;
+        }
+        .hero img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .hero h1 {
+            font-size: 3em;
+            margin: 20px 0 0 0;
+        }
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0 0 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: #aadad3;
+            color: black;
+            border-radius: 15px;
+            margin: 20px;
+        }
+        .content h2 {
+            font-size: 2em;
+            margin: 0 0 20px 0;
+        }
+        .content ul {
+            list-style-type: none;
+            max-width: 800px;
+            text-align: left;
+            padding-left: 0;
+        }
+        .content ul li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .content ul li img {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+        .content p {
+            font-size: 1.2em;
+            max-width: 800px;
+            text-align: center;
+        }
+        .cta {
+            background-color: #F3A081;
+            text-align: center;
+            padding: 40px 20px;
+            color: white;
+            border-radius: 15px;
+            margin: 20px;
+        }
+        .cta h2 {
+            font-size: 2.5em;
+            margin: 0 0 20px 0;
+        }
+        .cta button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 30px;
+        }
+        .cta button:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #72C2B7;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 15px 15px 0 0;
+        }
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin: 20px;
+            background-color: #aadad3;
+        }
+        #contato {
+            background-color: #F3A081;
+        }
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        .values-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .value-item {
+            flex: 1;
+            min-width: 250px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .value-item h3 {
+            margin-top: 0;
+        }
+        .contact-image {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('nav a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    window.scrollTo({
+                        top: targetElement.offsetTop,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/regrandologotiporedondo.png" alt="Logo do Regrando">
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre Nós</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="inicio">
+        <h1>Transforme sua vida com hábitos saudáveis</h1>
+        <p>Descubra receitas, dicas de nutrição e muito mais</p>
+    </div>
+
+    <div class="content">
+        <h2>Funcionalidades do Regrando:</h2>
+        <ul>
+            <li>
+                <img src="images/receitassaudaveis.png" alt="Funcionalidade 1">
+                Receitas saudáveis e práticas para o dia a dia.
+            </li>
+            <li>
+                <img src="images/ingestaoagua.png" alt="Funcionalidade 2">
+                Inserção e acompanhamento de hidratação.
+            </li>
+            <li>
+                <img src="images/registrorefeicao.png" alt="Funcionalidade 3">
+                Registros e acompanhamento das suas refeições.
+            </li>
+        </ul>
+        <p>Aproveite todas as vantagens do nosso app para conquistar uma vida mais equilibrada e feliz.</p>
+    </div>
+
+    <div id="sobre" class="section">
+        <h2>Sobre Nós</h2>
+        <div class="values-container">
+            <div class="value-item">
+                <h3>Missão</h3>
+                <p>Promover a saúde e o bem-estar através de hábitos alimentares saudáveis e balanceados.</p>
+            </div>
+            <div class="value-item">
+                <h3>Visão</h3>
+                <p>Ser referência em soluções digitais para alimentação saudável e bem-estar.</p>
+            </div>
+            <div class="value-item">
+                <h3>Valores</h3>
+                <p>Saúde, Bem-estar, Sustentabilidade, Inovação e Compromisso com o Usuário.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="contato" class="section">
+        <h2>Contato</h2>
+        <p>Siga-nos no Instagram: <a href="https://www.instagram.com/appregrando" target="_blank">@appregrando</a></p>
+        <p>Entre em contato conosco para mais informações e suporte.</p>
+    </div>
+
+    <footer>
+        <p>&copy; Regrando</p>
+    </footer>
+</body>
+</html>
